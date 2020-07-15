@@ -3,7 +3,9 @@ import * as ACTIONS from '../actions'
 const initialState = {
     isLoading: false,
     images: [],
-    error:''
+    error:'',
+    isSelected: false,
+    selectedImgUrl: ''
 }
 
 export const rootReducer = (state = initialState, action) =>{
@@ -13,6 +15,12 @@ export const rootReducer = (state = initialState, action) =>{
                 ...state,
                 images: action.payload
             }
+        case ACTIONS.IMAGE_SELECTED:
+            return{
+                ...state,
+                isSelected: true,
+                selectedImgUrl: action.payload.url
+            }  
         default:
             return state
     }

@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {fetchImage} from '../store/actions'
+import {fetchImage, selectImage} from '../store/actions'
+
+import Image from './Image'
 
 function ImageList(props){
 
@@ -9,14 +11,10 @@ function ImageList(props){
     },[])
 
     return(
-        <div>
+        <div className='image-section'>
             {
                 props.images.map( image =>{
-                    return (
-                        <div  key={image.id}>
-                            <img  src={image.download_url} alt='pic' />
-                        </div>    
-                    )
+                    return ( <Image key={image.id} image={image} /> )
                 })
             }
         </div>
@@ -29,4 +27,4 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps, {fetchImage})(ImageList);
+export default connect(mapStateToProps, {fetchImage, selectImage})(ImageList);

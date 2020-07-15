@@ -15,3 +15,12 @@ export const fetchImage = () => {
             })
     }
 }
+
+export const IMAGE_SELECTED = 'IMAGE_SELECTED';
+
+export const selectImage = (imageUrl)=>{
+    return{
+        type: IMAGE_SELECTED,
+        payload: {url: imageUrl}
+    }
+}

@@ -24,3 +24,10 @@ export const selectImage = (imageUrl)=>{
         payload: {url: imageUrl}
     }
 }
+
+
+export const UNSELECT_IMAGE = 'UNSELECT_IMAGE';
+
+export const unseletImage = () =>{
+    return {type: UNSELECT_IMAGE}
+}

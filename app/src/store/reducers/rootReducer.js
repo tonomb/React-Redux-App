@@ -21,6 +21,12 @@ export const rootReducer = (state = initialState, action) =>{
                 isSelected: true,
                 selectedImgUrl: action.payload.url
             }  
+        case ACTIONS.UNSELECT_IMAGE:
+            return{
+                ...state,
+                isSelected: false,
+                selectedImgUrl: ''
+            }    
         default:
             return state
     }

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {fetchImage, selectImage} from '../store/actions'
+import {fetchImage} from '../store/actions'
 
 import Image from './Image'
 
@@ -27,4 +27,4 @@ const mapStateToProps = state =>{
     }
 }
 
-export default connect(mapStateToProps, {fetchImage, selectImage})(ImageList);
+export default connect(mapStateToProps, {fetchImage})(ImageList);
